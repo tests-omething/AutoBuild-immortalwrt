@@ -68,7 +68,7 @@ CONFIG_PACKAGE_luci-app-pushbot=y
 #CONFIG_PACKAGE_luci-app-linkease=y
 
 # 行为管理
-CONFIG_PACKAGE_luci-app-oaf=y
+#CONFIG_PACKAGE_luci-app-oaf=y
 
 # passwall2
 CONFIG_PACKAGE_luci-app-passwall2=y
