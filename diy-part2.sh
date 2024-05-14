@@ -80,6 +80,9 @@ CONFIG_PACKAGE_luci-app-turboacc=y
 # 修改默认IP
 sed -i 's/192.168.1.1/10.0.2.1/g' package/base-files/files/bin/config_generate
 
+# 修改默认网关
+sed -i 's/255.255.255.0/255.255.252.0/g' package/base-files/files/bin/config_generate
+
 # 修改默认主题
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
