@@ -37,6 +37,12 @@ git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-pus
 #chmod -R a+x $GITHUB_WORKSPACE/preset-clash-core.sh
 #$GITHUB_WORKSPACE/preset-clash-core.sh
 
+#加入行为管控
+git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
+
+#加入turboacc
+curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
+
 echo "
 # 主题
 CONFIG_PACKAGE_luci-theme-design=y
@@ -55,6 +61,16 @@ CONFIG_PACKAGE_luci-app-pushbot=y
 
 # 易有云
 #CONFIG_PACKAGE_luci-app-linkease=y
+
+# 行为管理
+CONFIG_PACKAGE_luci-app-oaf=y
+
+# passwall2
+CONFIG_PACKAGE_luci-app-passwall2=y
+
+# TurboAcc
+CONFIG_PACKAGE_luci-app-turboacc=y
+
 
 " >> .config
 
