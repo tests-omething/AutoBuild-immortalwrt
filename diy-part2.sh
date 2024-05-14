@@ -38,13 +38,14 @@ git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-pus
 #$GITHUB_WORKSPACE/preset-clash-core.sh
 
 #加入行为管控
-git clone -b master --single-branch https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
+#git clone -b master --single-branch https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
 #加入passwall2
-git clone -b main --single-branch https://github.com/xiaorouji/openwrt-passwall2.git package/luci-app-passwall2
+#git clone -b main --single-branch https://github.com/xiaorouji/openwrt-passwall2.git package/luci-app-passwall2
 
 #加入turboacc
-curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
+curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh
+./add_turboacc.sh
 
 echo "
 # 主题
@@ -66,7 +67,7 @@ CONFIG_PACKAGE_luci-app-pushbot=y
 #CONFIG_PACKAGE_luci-app-linkease=y
 
 # 行为管理
-CONFIG_PACKAGE_luci-app-oaf=y
+#CONFIG_PACKAGE_luci-app-oaf=y
 
 # passwall2
 CONFIG_PACKAGE_luci-app-passwall2=y
