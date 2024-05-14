@@ -45,6 +45,7 @@ git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-pus
 
 #加入turboacc
 curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh
+chmod -R 777 add_turboacc.sh
 ./add_turboacc.sh
 
 echo "
