@@ -164,11 +164,11 @@ jobs:
 
         ⏱️ 编译时间: $(date +"%Y年%m月%d日%H时%M分")
 
-        🌐 管理地址: 192.168.0.2
+        🌐 管理地址: 10.0.2.1
 
         👤 用户名: root
 
-        🔒 密码: password 
+        🔒 密码: 空 
         
         " >> release.txt
         echo "status=success" >> ${GITHUB_OUTPUT}
@@ -181,8 +181,8 @@ jobs:
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
 
-    - name: TG推送
-      run: curl "https://api2.pushdeer.com/message/push?pushkey=${{ secrets.PUSHDEER_TOKEN }}&text=【Github Actions】AutoBuild-immortalwrt-x86 打包成功"
+#    - name: TG推送
+#      run: curl "https://api2.pushdeer.com/message/push?pushkey=${{ secrets.PUSHDEER_TOKEN }}&text=【Github Actions】AutoBuild-immortalwrt-x86 打包成功"
 
     - name: 删除运行记录
       uses: Mattraks/delete-workflow-runs@main
