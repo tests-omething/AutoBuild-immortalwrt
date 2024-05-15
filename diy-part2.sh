@@ -69,7 +69,7 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/M
 sed -i 's/ImmortalWrt/OpenWrt/g' package/base-files/files/bin/config_generate
 
 # 修改Ping 默认网址 immortalwrt.org
-sed -i 's/immortalwrt.org/openwrt.ort/g' feeds/luci/modules/luci-mod-admin-full/luasrc/model/cbi/admin_network/diagnostics.lua
+cat feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_network/diagnostics.htm
 
 # 修改系统信息
 cp -f $GITHUB_WORKSPACE/99-default-settings package/emortal/default-settings/files/99-default-settings
