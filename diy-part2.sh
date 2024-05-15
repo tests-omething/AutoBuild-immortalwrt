@@ -32,20 +32,12 @@ git clone -b js --single-branch https://github.com/gngpp/luci-theme-design packa
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-pushbot
 #git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-jellyfin luci-lib-taskd luci-lib-xterm taskd
 #git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-linkease linkease ffmpeg-remux
-#git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-oaf
 #git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-passwall2
 #git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-turboacc
-git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-cpufreq
 
 # 加入OpenClash核心
 #chmod -R a+x $GITHUB_WORKSPACE/preset-clash-core.sh
 #$GITHUB_WORKSPACE/preset-clash-core.sh
-
-#加入行为管控
-#git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
-
-#加入passwall2
-#git clone -b main --single-branch https://github.com/xiaorouji/openwrt-passwall2.git package/luci-app-passwall2
 
 #加入turboacc
 curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh
@@ -71,17 +63,11 @@ CONFIG_PACKAGE_luci-app-pushbot=y
 # 易有云
 #CONFIG_PACKAGE_luci-app-linkease=y
 
-# 行为管理
-#CONFIG_PACKAGE_luci-app-oaf=y
-
 # passwall2
 CONFIG_PACKAGE_luci-app-passwall2=y
 
 # TurboAcc
 CONFIG_PACKAGE_luci-app-turboacc=y
-
-# CPU调频
-CONFIG_PACKAGE_luci-app-cpufreq=y
 
 " >> .config
 
