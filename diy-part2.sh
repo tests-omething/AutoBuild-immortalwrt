@@ -35,6 +35,7 @@ git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-pus
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-oaf
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-passwall2
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-turboacc
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-cpufreq
 
 # 加入OpenClash核心
 #chmod -R a+x $GITHUB_WORKSPACE/preset-clash-core.sh
@@ -79,6 +80,8 @@ CONFIG_PACKAGE_luci-app-passwall2=y
 # TurboAcc
 CONFIG_PACKAGE_luci-app-turboacc=y
 
+# CPU调频
+CONFIG_PACKAGE_luci-app-cpufreq=y
 
 " >> .config
 
