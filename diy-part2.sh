@@ -68,6 +68,9 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/M
 # 修改主机名
 sed -i 's/ImmortalWrt/OpenWrt/g' package/base-files/files/bin/config_generate
 
+# 修改Ping 默认网址 immortalwrt.org
+sed -i 's/immortalwrt.org/openwrt.ort/g' feeds/luci/modules/luci-mod-admin-full/luasrc/model/cbi/admin_network/diagnostics.lua
+
 # 修改系统信息
 cp -f $GITHUB_WORKSPACE/99-default-settings package/emortal/default-settings/files/99-default-settings
 cp -f $GITHUB_WORKSPACE/banner package/base-files/files/etc/banner
