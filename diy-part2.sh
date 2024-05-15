@@ -39,7 +39,7 @@ git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-oaf
 #$GITHUB_WORKSPACE/preset-clash-core.sh
 
 #加入行为管控
-git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
+#git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
 #加入passwall2
 #git clone -b main --single-branch https://github.com/xiaorouji/openwrt-passwall2.git package/luci-app-passwall2
