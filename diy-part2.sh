@@ -33,6 +33,8 @@ git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-pus
 #git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-jellyfin luci-lib-taskd luci-lib-xterm taskd
 #git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-linkease linkease ffmpeg-remux
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-oaf
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-passwall2
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-turboacc
 
 # 加入OpenClash核心
 #chmod -R a+x $GITHUB_WORKSPACE/preset-clash-core.sh
@@ -45,9 +47,9 @@ git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-oaf
 #git clone -b main --single-branch https://github.com/xiaorouji/openwrt-passwall2.git package/luci-app-passwall2
 
 #加入turboacc
-curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh
-chmod -R 777 add_turboacc.sh
-./add_turboacc.sh
+#curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh
+#chmod -R 777 add_turboacc.sh
+#./add_turboacc.sh
 
 echo "
 # 主题
