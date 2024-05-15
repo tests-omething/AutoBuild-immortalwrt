@@ -25,20 +25,14 @@ function git_sparse_clone() {
 }
 
 # 添加额外插件
+# 添加 design 主题
 git clone -b js --single-branch https://github.com/gngpp/luci-theme-design package/luci-theme-design
-#git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
-#git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
-#git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-aliddns
+# 添加 万能推送
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-pushbot
-#git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-jellyfin luci-lib-taskd luci-lib-xterm taskd
-#git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-linkease linkease ffmpeg-remux
-#git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-passwall2
-#git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-turboacc
-
-# 加入OpenClash核心
-#chmod -R a+x $GITHUB_WORKSPACE/preset-clash-core.sh
-#$GITHUB_WORKSPACE/preset-clash-core.sh
-
+# 添加关机插件
+git clone https://github.com/esirplayground/luci-app-poweroff.git package/luci-app-poweroff
+# 添加passwall2
+git clone https://github.com/xiaorouji/openwrt-passwall2.git package/luci-app-passwall2
 #加入turboacc
 curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh
 chmod -R 777 add_turboacc.sh
@@ -48,20 +42,11 @@ echo "
 # 主题
 CONFIG_PACKAGE_luci-theme-design=y
 
-# mosdns
-#CONFIG_PACKAGE_luci-app-mosdns=y
-
-# pushbot
+# 万能推送
 CONFIG_PACKAGE_luci-app-pushbot=y
 
-# 阿里DDNS
-#CONFIG_PACKAGE_luci-app-aliddns=y
-
-# Jellyfin
-#CONFIG_PACKAGE_luci-app-jellyfin=y
-
-# 易有云
-#CONFIG_PACKAGE_luci-app-linkease=y
+# 关机插件
+#CONFIG_PACKAGE_luci-app-poweroff=y
 
 # passwall2
 CONFIG_PACKAGE_luci-app-passwall2=y
@@ -101,5 +86,3 @@ cp -f $GITHUB_WORKSPACE/argon/icon/favicon-96x96.png feeds/luci/themes/luci-them
 cp -f $GITHUB_WORKSPACE/argon/icon/ms-icon-144x144.png feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/icon/ms-icon-144x144.png
 cp -f $GITHUB_WORKSPACE/argon/favicon.ico package/luci-theme-design/htdocs/luci-static/design/favicon.ico
 
-curl -fsSL  https://raw.githubusercontent.com/sirpdboy/other/master/patch/poweroff/poweroff.htm > ./feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_system/poweroff.htm
-curl -fsSL  https://raw.githubusercontent.com/sirpdboy/other/master/patch/poweroff/system.lua > ./feeds/luci/modules/luci-mod-admin-full/luasrc/controller/admin/system.lua
