@@ -30,7 +30,7 @@ git clone -b js --single-branch https://github.com/gngpp/luci-theme-design packa
 # 添加 万能推送
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-pushbot
 # 添加关机插件
-git clone https://github.com/VPN-V2Ray/luci-app-poweroff.git package/luci-app-poweroff
+#git clone https://github.com/VPN-V2Ray/luci-app-poweroff.git package/luci-app-poweroff
 # 添加passwall2
 git clone https://github.com/xiaorouji/openwrt-passwall2.git package/luci-app-passwall2
 #加入turboacc
@@ -46,7 +46,7 @@ CONFIG_PACKAGE_luci-theme-design=y
 CONFIG_PACKAGE_luci-app-pushbot=y
 
 # 关机插件
-CONFIG_PACKAGE_luci-app-poweroff=y
+#CONFIG_PACKAGE_luci-app-poweroff=y
 
 # passwall2
 CONFIG_PACKAGE_luci-app-passwall2=y
