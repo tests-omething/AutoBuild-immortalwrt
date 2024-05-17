@@ -40,6 +40,7 @@ chmod -R 777 add_turboacc.sh
 
 git clone https://github.com/thinktip/luci-theme-neobird.git
 git clone https://github.com/derisamedia/luci-theme-alpha.git
+git clone https://github.com/sirpdboy/luci-theme-kucat.git
 
 echo "
 # 主题
@@ -53,7 +54,9 @@ CONFIG_PACKAGE_luci-theme-argon=y
 
 CONFIG_PACKAGE_luci-theme-alpha=y
 
-CONFIG_PACKAGE_Luci-theme-neobird=y
+CONFIG_PACKAGE_luci-theme-neobird=y
+
+CONFIG_PACKAGE_luci-theme-kucat=y
 
 
 # 万能推送
