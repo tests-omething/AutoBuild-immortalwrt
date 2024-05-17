@@ -38,9 +38,9 @@ curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turbo
 chmod -R 777 add_turboacc.sh
 ./add_turboacc.sh
 
-git clone https://github.com/thinktip/luci-theme-neobird.git
-git clone https://github.com/derisamedia/luci-theme-alpha.git
-git clone https://github.com/sirpdboy/luci-theme-kucat.git
+git clone https://github.com/thinktip/luci-theme-neobird.git package/luci-theme-neobird
+git clone https://github.com/derisamedia/luci-theme-alpha.git package/luci-theme-alpha
+git clone https://github.com/sirpdboy/luci-theme-kucat.git package/luci-theme-kucat
 
 echo "
 # 主题
