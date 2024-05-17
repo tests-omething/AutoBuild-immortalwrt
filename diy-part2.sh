@@ -42,11 +42,11 @@ echo "
 # 主题
 CONFIG_PACKAGE_luci-theme-design=y
 
-CONFIG_PACKAGE_luci-theme-argon=y
+#CONFIG_PACKAGE_luci-theme-argon=y
 
 #CONFIG_PACKAGE_luci-theme-material=y
 
-CONFIG_PACKAGE_luci-theme-openwrt-2020=y
+#CONFIG_PACKAGE_luci-theme-openwrt-2020=y
 
 
 # 万能推送
