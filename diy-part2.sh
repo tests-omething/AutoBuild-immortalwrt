@@ -38,7 +38,7 @@ curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turbo
 chmod -R 777 add_turboacc.sh
 ./add_turboacc.sh
 
-git clone https://github.com/thinktip/luci-theme-neobird.git package/luci-theme-neobird
+
 git clone https://github.com/derisamedia/luci-theme-alpha.git package/luci-theme-alpha
 git clone https://github.com/sirpdboy/luci-theme-kucat.git package/luci-theme-kucat
 
@@ -53,8 +53,6 @@ CONFIG_PACKAGE_luci-theme-argon=y
 #CONFIG_PACKAGE_luci-theme-openwrt-2020=y
 
 CONFIG_PACKAGE_luci-theme-alpha=y
-
-CONFIG_PACKAGE_luci-theme-neobird=y
 
 CONFIG_PACKAGE_luci-theme-kucat=y
 
