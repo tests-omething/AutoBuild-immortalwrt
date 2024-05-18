@@ -33,6 +33,10 @@ git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-pus
 #git clone https://github.com/VPN-V2Ray/luci-app-poweroff.git package/luci-app-poweroff
 # 添加passwall2
 git clone https://github.com/xiaorouji/openwrt-passwall2.git package/luci-app-passwall2
+# 添加OpenClash
+git clone https://github.com/vernesong/OpenClash.git package/luci-app-OpenClash
+# 添加AdGuardHome
+git clone https://github.com/AdguardTeam/AdGuardHome.git package/luci-app-AdGuardHome
 #加入turboacc
 curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh
 chmod -R 777 add_turboacc.sh
