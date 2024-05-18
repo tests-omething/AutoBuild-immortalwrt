@@ -40,7 +40,6 @@ chmod -R 777 add_turboacc.sh
 
 
 git clone https://github.com/derisamedia/luci-theme-alpha.git package/luci-theme-alpha
-git clone https://github.com/sirpdboy/luci-theme-kucat.git package/luci-theme-kucat
 
 echo "
 # 主题
@@ -48,13 +47,12 @@ CONFIG_PACKAGE_luci-theme-design=y
 
 CONFIG_PACKAGE_luci-theme-argon=y
 
-#CONFIG_PACKAGE_luci-theme-material=y
+CONFIG_PACKAGE_luci-theme-material=y
 
-#CONFIG_PACKAGE_luci-theme-openwrt-2020=y
+CONFIG_PACKAGE_luci-theme-openwrt-2020=y
 
 CONFIG_PACKAGE_luci-theme-alpha=y
 
-CONFIG_PACKAGE_luci-theme-kucat=y
 
 
 # 万能推送
@@ -78,7 +76,7 @@ sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 sed -i 's/255.255.255.0/255.255.252.0/g' package/base-files/files/bin/config_generate
 
 # 修改默认主题
-#sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-alpha/g' feeds/luci/collections/luci/Makefile
 
 # 修改主机名
 sed -i 's/ImmortalWrt/OpenWrt/g' package/base-files/files/bin/config_generate
