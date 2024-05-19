@@ -27,6 +27,8 @@ function git_sparse_clone() {
 # 添加额外插件
 # 添加 design 主题
 git clone -b js --single-branch https://github.com/gngpp/luci-theme-design package/luci-theme-design
+# 添加 alpha 主题
+git clone https://github.com/derisamedia/luci-theme-alpha.git package/luci-theme-alpha
 # 添加 万能推送
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-pushbot
 # 添加关机插件
@@ -40,7 +42,6 @@ chmod -R 777 add_turboacc.sh
 ./add_turboacc.sh
 
 
-git clone https://github.com/derisamedia/luci-theme-alpha.git package/luci-theme-alpha
 
 echo "
 # 主题
