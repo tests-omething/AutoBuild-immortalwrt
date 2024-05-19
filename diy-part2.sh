@@ -74,7 +74,7 @@ CONFIG_PACKAGE_luci-app-turboacc=y
 " >> .config
 
 # 修改默认IP
-sed -i 's/192.168.88.1/10.0.0.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/1.0.0.1/g' package/base-files/files/bin/config_generate
 
 # 修改默认子网掩码
 sed -i 's/255.255.255.0/255.255.252.0/g' package/base-files/files/bin/config_generate
