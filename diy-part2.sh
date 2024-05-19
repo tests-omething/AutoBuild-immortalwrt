@@ -80,7 +80,7 @@ sed -i 's/255.255.255.0/255.255.252.0/g' package/base-files/files/bin/config_gen
 #sed -i 's/luci-theme-openwrt-2020/luci-theme-alpha/g' feeds/luci/collections/luci/Makefile
 
 # 修改主机名
-sed -i 's/ImmortalWrt/OpenWrt/g' package/base-files/files/bin/config_generate
+sed -i 's/ImmortalWrt/ImmortalWrt(T)/g' package/base-files/files/bin/config_generate
 
 # 修改Ping 默认网址 immortalwrt.org
 #cat feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_network/diagnostics.htm
