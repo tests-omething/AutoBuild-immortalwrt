@@ -71,6 +71,8 @@ CONFIG_PACKAGE_luci-app-passwall2=y
 
 # TurboAcc
 CONFIG_PACKAGE_luci-app-turboacc=y
+#netdata
+CONFIG_PACKAGE_luci-app-netdata=y
 
 " >> .config
 
