@@ -63,6 +63,9 @@ CONFIG_PACKAGE_luci-app-pushbot=y
 # 关机插件
 #CONFIG_PACKAGE_luci-app-poweroff=y
 
+#openclash
+CONFIG_PACKAGE_luci-app-openclash=y
+
 # passwall2
 CONFIG_PACKAGE_luci-app-passwall2=y
 
