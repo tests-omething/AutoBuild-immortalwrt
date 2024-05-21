@@ -57,7 +57,7 @@ CONFIG_PACKAGE_luci-theme-openwrt-2020=y
 
 CONFIG_PACKAGE_luci-theme-alpha=y
 
-
+CONFIG_PACKAGE_luci-theme-bootstrap-mod=y
 
 # 万能推送
 CONFIG_PACKAGE_luci-app-pushbot=y
@@ -70,10 +70,13 @@ CONFIG_PACKAGE_luci-app-openclash=y
 
 # passwall2
 CONFIG_PACKAGE_luci-app-passwall2=y
+
 #adguardhome
 CONFIG_PACKAGE_luci-app-adguardhome=y
+
 # TurboAcc
 CONFIG_PACKAGE_luci-app-turboacc=y
+
 #netdata
 CONFIG_PACKAGE_luci-app-netdata=y
 
@@ -86,7 +89,7 @@ sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 sed -i 's/255.255.255.0/255.255.252.0/g' package/base-files/files/bin/config_generate
 
 # 修改默认主题
-#sed -i 's/luci-theme-openwrt-2020/luci-theme-alpha/g' feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-openwrt-2020/luci-theme-bootstrap-mod/g' feeds/luci/collections/luci/Makefile
 
 # 修改主机名
 sed -i 's/ImmortalWrt/ImmortalWrt(T)/g' package/base-files/files/bin/config_generate
