@@ -35,6 +35,8 @@ git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-pus
 #git clone https://github.com/VPN-V2Ray/luci-app-poweroff.git package/luci-app-poweroff
 # 添加passwall2
 git clone https://github.com/xiaorouji/openwrt-passwall2.git package/luci-app-passwall2
+#添加adguardhome
+git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/luci-app-adguardhome
 
 #加入turboacc
 curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh
@@ -68,7 +70,8 @@ CONFIG_PACKAGE_luci-app-openclash=y
 
 # passwall2
 CONFIG_PACKAGE_luci-app-passwall2=y
-
+#adguardhome
+CONFIG_PACKAGE_luci-app-adguardhome=y
 # TurboAcc
 CONFIG_PACKAGE_luci-app-turboacc=y
 #netdata
