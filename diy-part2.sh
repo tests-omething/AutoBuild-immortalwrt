@@ -43,7 +43,7 @@ curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turbo
 chmod -R 777 add_turboacc.sh
 ./add_turboacc.sh
 
-
+#通过 echo 命令 将以下内容发送到.config文件中，.config文件里面有 所有makefile文件的编译开关以及依赖项等等元数据！也可以通过make menuconfig(图形界面)来生成.config文件！
 
 echo "
 # 主题
