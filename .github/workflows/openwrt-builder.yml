@@ -49,7 +49,18 @@ jobs:
         sudo mount /dev/github/runner /builder
         sudo chown -R runner:runner /builder
         df -Th
-        
+    - name: 缓存构建动作
+      uses: actions/cache@v3
+      with:
+        path: |
+          openwrt/bin
+          openwrt/build_dir
+          openwrt/staging_dir
+          openwrt/tmp
+          openwrt/dl
+        key: ${{ runner.os }}-openwrt-${{ github.sha }}
+        restore-keys: |
+          ${{ runner.os }}-openwrt-
     - name: 检查服务器配置
       run: |
         echo "若分配的服务器性能不足，务必及时取消，重新运行！"
