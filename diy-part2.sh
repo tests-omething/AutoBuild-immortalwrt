@@ -43,6 +43,10 @@ curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turbo
 chmod -R 777 add_turboacc.sh
 ./add_turboacc.sh
 
+# 加入OpenClash核心
+chmod -R a+x $GITHUB_WORKSPACE/preset-clash-core.sh
+$GITHUB_WORKSPACE/preset-clash-core.sh
+
 #通过 echo 命令 将以下内容发送到.config文件中，.config文件里面有 所有makefile文件的编译开关以及依赖项等等元数据！也可以通过make menuconfig(图形界面)来生成.config文件！
 
 echo "
@@ -80,6 +84,21 @@ CONFIG_PACKAGE_luci-app-turboacc=y
 #netdata
 CONFIG_PACKAGE_luci-app-netdata=y
 
+# mosdns
+CONFIG_PACKAGE_luci-app-mosdns=y
+
+# pushbot
+CONFIG_PACKAGE_luci-app-pushbot=y
+
+# 阿里DDNS
+CONFIG_PACKAGE_luci-app-aliddns=y
+
+# Jellyfin
+#CONFIG_PACKAGE_luci-app-jellyfin=y
+
+# 易有云
+CONFIG_PACKAGE_luci-app-linkease=y
+
 " >> .config
 
 # 修改默认IP
@@ -89,7 +108,7 @@ sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 sed -i 's/255.255.255.0/255.255.252.0/g' package/base-files/files/bin/config_generate
 
 # 修改默认主题
-sed -i 's/luci-theme-openwrt-2020/luci-theme-bootstrap-mod/g' feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 # 修改主机名
 sed -i 's/ImmortalWrt/ImmortalWrt_T/g' package/base-files/files/bin/config_generate
