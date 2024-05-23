@@ -49,7 +49,9 @@ jobs:
         sudo mount /dev/github/runner /builder
         sudo chown -R runner:runner /builder
         df -Th
-    - name: 缓存构建动作
+
+    - name: Restore cache for OpenWrt build
+      id: restore-cache-openwrt
       uses: actions/cache@v3
       with:
         path: |
@@ -57,10 +59,10 @@ jobs:
           openwrt/build_dir
           openwrt/staging_dir
           openwrt/tmp
-          openwrt/dl
-        key: ${{ runner.os }}-openwrt-${{ github.sha }}
+        key: ${{ runner.os }}-openwrt-${{ hashFiles('**/openwrt/.config') }}-${{ hashFiles('**/openwrt/feeds.conf.default') }}
         restore-keys: |
           ${{ runner.os }}-openwrt-
+          
     - name: 检查服务器配置
       run: |
         echo "若分配的服务器性能不足，务必及时取消，重新运行！"
@@ -97,12 +99,7 @@ jobs:
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
-    - name: 缓存构建动作
-      uses: stupidloud/cachewrtbuild@main
-      with:
-        ccache: 'true'
-        mixkey: x86-64-${{ env.REPO_BRANCH }}
-        prefix: ${{ github.workspace }}/openwrt
+
 
     - name: 加载自定义 feeds
       run: |
@@ -139,13 +136,27 @@ jobs:
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
-
+        
+    - name: Verify cache restoration
+      run: |
+        cd openwrt
+        if [ -d "build_dir" ] && [ -d "staging_dir" ]; then
+          echo "Cache restored successfully."
+        else
+          echo "Cache restoration failed."
+        fi
+        
     - name: 编译固件
       id: compile
       run: |
         cd openwrt
         echo -e "$(nproc) thread compile"
-        make -j$(nproc) || make -j1 || make -j1 V=s
+        if [ ! -d "build_dir" ] || [ ! -d "staging_dir" ]; then
+          echo "No cache available, starting full build."
+          make -j$(nproc) || make -j1 || make -j1 V=s
+        else
+          echo "Using cached build."
+        fi
         echo "FILE_DATE=_$(date +"%Y%m%d%H%M")" >> $GITHUB_ENV
         grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
         [ -s DEVICE_NAME ] && echo "DEVICE_NAME=_$(cat DEVICE_NAME)" >> $GITHUB_ENV
